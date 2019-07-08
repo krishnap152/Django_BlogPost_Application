@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+            <h1>{{ object_list}} is working</h1>
+            <p> Parent Page  </p>
+            {% for obj in object_list %}
+            # 
+        <!--    <a href="{{obj.id}}"> {{obj.id}}</a><br/> -->
+
+        <!--  <a href='{% url "posts:detail" id=obj.id %}'> {{obj.title}}</a><br/> -->
+            <a href="{{ obj.get_absolute_url}}" >{{obj.title}}</a>
+            {{obj.id}}<br/>
+            {{obj.content}}<br/>
+            {{obj.timestamp}}<br/>
+            {{obj.updated}}<br/>
+            
+            {%endfor%}
+
+            {% endblock content %}
