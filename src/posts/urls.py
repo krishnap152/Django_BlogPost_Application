@@ -6,7 +6,7 @@ app_name="posts"
 urlpatterns = [
     path('', post_list, name="list"),
     path('create/', post_create),
-    re_path(r'^(?P<id>\d+)/$', post_detail,name="detail"),
-    re_path(r'^(?P<id>\d+)/edit/$', post_update, name='update'),
-    re_path(r'^(?P<id>\d+)/delete/', post_delete),
+    path('<str:slug>/', post_detail,name="detail"),
+    path('<str:slug>/edit/', post_update, name='update'),
+    path('<str:slug>/delete/', post_delete),
 ]
